@@ -7,7 +7,7 @@
 		<div class="card-group justify-content-center">
  
 			 <form method="post">
-			 	<h3>Add New Class</h3>
+			 	<h3>Agregar nuevo curso</h3>
 
 			 	<?php if(count($errors) > 0):?>
 				<div class="alert alert-warning alert-dismissible fade show p-1" role="alert">
@@ -21,11 +21,11 @@
 				</div>
 				<?php endif;?>
 			
-			 	<input autofocus class="form-control" value="<?=get_var('class')?>" type="text" name="class" placeholder="Class Name"><br><br>
-			 	<input class="btn btn-primary float-end" type="submit" value="Create">
+			 	<input autofocus class="form-control" value="<?=get_var('class')?>" type="text" name="class" placeholder="Nombre curso"><br><br>
+			 	<input class="btn btn-primary float-end" type="submit" value="Crear">
 
 			 	<a href="<?=ROOT?>/classes">
-			 		<input class="btn btn-danger" type="button" value="Cancel">
+			 		<input class="btn btn-danger" type="button" value="Cancelar">
 			 	</a>
 			 </form>
 		</div>

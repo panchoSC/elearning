@@ -64,8 +64,8 @@ class To_mark extends Controller
 			}
 		}
 
-		$crumbs[] = ['Dashboard',''];
-		$crumbs[] = ['To Mark','to_mark'];
+		$crumbs[] = ['Panel',''];
+		$crumbs[] = ['Revisar','to_mark'];
 
 		$this->view('to-mark',[
 			'crumbs'=>$crumbs,

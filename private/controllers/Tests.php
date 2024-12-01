@@ -57,8 +57,8 @@ class Tests extends Controller
  
  		}
 
-		$crumbs[] = ['Dashboard',''];
-		$crumbs[] = ['Tests','tests'];
+		$crumbs[] = ['Panel',''];
+		$crumbs[] = ['Pruebas','tests'];
 
 		$this->view('tests',[
 			'crumbs'=>$crumbs,

@@ -9,7 +9,7 @@
     <center><a href="<?=ROOT?>/profile/<?=$row->user_id?>" class="btn btn-primary">Perfil</a></center>
     
     <?php if(isset($_GET['select'])):?>
-      <button name="selected" value="<?=$row->user_id?>" class="float-end btn btn-danger">Select</button>
+      <button name="selected" value="<?=$row->user_id?>" class="float-end btn btn-danger">Seleccionar</button>
     <?php endif;?>
 
   </div>

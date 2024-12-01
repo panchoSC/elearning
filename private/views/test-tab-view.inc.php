@@ -2,23 +2,23 @@
 <?php if($row->disabled):?>
 	<nav class="navbar">
 		<center>
-			<h5>Test Questions</h5>
-			<p><b>Total Questions:</b> <?=$total_questions?></p>
+			<h5>Preguntas</h5>
+			<p><b>Total:</b> <?=$total_questions?></p>
 		</center>
 	<div class="btn-group">
 	  <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-	    <i class="fa fa-bars"></i>Add
+	    <i class="fa fa-bars"></i>Agregar
 	  </button>
 	  <ul class="dropdown-menu  dropdown-menu-end">
 	    <li><a class="dropdown-item" href="<?=ROOT?>/single_test/addquestion/<?=$row->test_id?>?type=multiple">
-	    	Add Multiple choice Question</a>
+	    	Agregar pregunta seleccion multiple</a>
 		</li>
 	    <li><a class="dropdown-item" href="<?=ROOT?>/single_test/addquestion/<?=$row->test_id?>?type=objective">
-	    	Add Objective Question</a>
+	    	Agregar pregunta cerrada</a>
 		</li>
 	    <li><hr class="dropdown-divider"></li>
 	    <li><a class="dropdown-item" href="<?=ROOT?>/single_test/addquestion/<?=$row->test_id?>">
-	    	Add Subjective Question</a>
+	    	Agregar pregunta abierta</a>
 		</li>
 	  </ul>
 	</div>
@@ -32,7 +32,7 @@
 	<?php foreach($questions as $question): $num--?>
 		<div class="card mb-4 shadow">
 		  <div class="card-header">
-		    <span  class="bg-primary p-1 text-white rounded">Question #<?=$num?></span> <span class="badge bg-primary float-end p-2"><?=date("F jS, Y H:i:s a",strtotime($question->date))?></span>
+		    <span  class="bg-primary p-1 text-white rounded">Pregunta #<?=$num?></span> <span class="badge bg-primary float-end p-2"><?=date("F jS, Y H:i:s a",strtotime($question->date))?></span>
 		  </div>
 		  <div class="card-body">
 		    <h5 class="card-title"><?=esc($question->question)?></h5>
@@ -49,7 +49,7 @@
 		    	<?php if($question->question_type == 'objective'):
 		    		$type = '?type=objective';
 		    	?>
-		    	<p class="card-text"><b>Answer:</b> <?=esc($question->correct_answer)?></p>
+		    	<p class="card-text"><b>Respuesta:</b> <?=esc($question->correct_answer)?></p>
 		    	<?php endif;?>
 
 		    	<?php if($question->question_type == 'multiple'):
@@ -58,7 +58,7 @@
 
 		    		<div class="card" style="width: 18rem;">
 						  <div class="card-header">
-						    Multiple choice
+						    Seleccion multiple
 						  </div>
 						  <ul class="list-group list-group-flush">
 
@@ -76,7 +76,7 @@
  						  </ul>
 						</div>
 						<br>
-		    	<p class="card-text"><b>Answer:</b> <?=esc($question->correct_answer)?></p>
+		    	<p class="card-text"><b>Respuesta:</b> <?=esc($question->correct_answer)?></p>
 		    	<?php endif;?>
 
 		    	

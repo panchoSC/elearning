@@ -19,9 +19,10 @@
 		min-width: 250px;
 	}
 </style>
+	
 	<div class="container-fluid p-4 shadow mx-auto" style="max-width: 1000px;">
 	 
-	 	<div class="row justify-content-center ">
+	 	<div class="row justify-content-center">
 
 	 		<?php if(Auth::access('super_admin')):?>
 		 		<div class="card col-3 shadow rounded m-4 p-0 border">
@@ -101,5 +102,8 @@
 
 	 	</div>
 	</div>
+	<!--Start of Todoist Script -->
+	<iframe src="https://app.todoist.com/app/project/educacion-2343150271" width="30%" height="600"></iframe>
+	<!--End of Todoist Script -->
  
 <?php $this->view('includes/footer')?>

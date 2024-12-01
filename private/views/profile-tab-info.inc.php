@@ -1,1 +1,1 @@
-<h3>Basic info</h3>
+<h3>Informacion basica</h3>

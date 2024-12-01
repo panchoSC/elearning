@@ -9,21 +9,21 @@
 		<div class="row">
 	 	<center><h4><?=esc(ucwords($row->test))?></h4></center>
 	 	<center class="row">
-	 		<h5 class="col">Class: <?=$row->class->class?></h5>
-	 		<h5 class="col">Student: <?=$student_row->firstname?> <?=$student_row->lastname?></h5>
+	 		<h5 class="col">Curso: <?=$row->class->class?></h5>
+	 		<h5 class="col">Estudiante: <?=$student_row->firstname?> <?=$student_row->lastname?></h5>
 	 	</center>
 
 			<table class="table table-hover table-striped table-bordered">
 				<tr>
-					<th>Created by:</th><td><?=esc($row->user->firstname)?> <?=esc($row->user->lastname)?></td>
-					<th>Date Created:</th><td><?=get_date($row->date)?></td>
+					<th>Creado por:</th><td><?=esc($row->user->firstname)?> <?=esc($row->user->lastname)?></td>
+					<th>Fecha de creacion:</th><td><?=get_date($row->date)?></td>
 				 
 				</tr>
 
 				<?php $active = $row->disabled ? "No":"Yes";?>
 				<tr>
-					<td><b>Class:</b> <?=$row->class->class?></td>
-					<td colspan="5"><b>Test Description:</b><br><?=esc($row->description)?></td></tr>
+					<td><b>Curso:</b> <?=$row->class->class?></td>
+					<td colspan="5"><b>Descripcion prueba:</b><br><?=esc($row->description)?></td></tr>
 			</table>
  		</div>
  		 
@@ -46,7 +46,7 @@
 		 		?>
 		 
 		<?php else:?>
-			<center><h4>That test was not found!</h4></center>
+			<center><h4>La prueba no ha sido encontrada</h4></center>
 		<?php endif;?>
 
 	</div>

@@ -2,7 +2,7 @@
 <?php $this->view('includes/nav')?>
 	
 	<div class="container-fluid p-4 shadow mx-auto" style="max-width: 1000px;">
-		<center><h4>Edit Profile</h4></center>
+		<center><h4>Editar perfil</h4></center>
 		<?php if($row):?>
 
 		<?php
@@ -18,7 +18,7 @@
 				<div class="text-center">
 					<label for="image_browser" class="btn-sm btn btn-info text-white">
 						<input onchange="display_image_name(this.files[0].name)" id="image_browser" type="file" name="image" style="display: none;">
- 						Browse Image
+ 						Buscar imagen
  			 		</label>
  			 		<br>
  			 		<small class="file_info text-muted"></small>
@@ -40,21 +40,21 @@
 						</div>
 						<?php endif;?>
 
-						<input class="my-2 form-control" value="<?=get_var('firstname',$row->firstname)?>" type="firstname" name="firstname" placeholder="First Name" >
-						<input class="my-2 form-control" value="<?=get_var('lastname',$row->lastname)?>" type="lastname" name="lastname" placeholder="Last Name" >
-						<input class="my-2 form-control" value="<?=get_var('email',$row->email)?>" type="email" name="email" placeholder="Email" >
+						<input class="my-2 form-control" value="<?=get_var('firstname',$row->firstname)?>" type="firstname" name="firstname" placeholder="Nombre" >
+						<input class="my-2 form-control" value="<?=get_var('lastname',$row->lastname)?>" type="lastname" name="lastname" placeholder="Apellido" >
+						<input class="my-2 form-control" value="<?=get_var('email',$row->email)?>" type="email" name="email" placeholder="Correo electronico" >
 
 						<select class="my-2 form-control" name="gender">
 							<option <?=get_select('gender',$row->gender)?> value="<?=$row->gender?>"><?=ucwords($row->gender)?></option>
-							<option <?=get_select('gender','male')?> value="male">Male</option>
-							<option <?=get_select('gender','female')?> value="female">Female</option>
+							<option <?=get_select('gender','male')?> value="male">Hombre</option>
+							<option <?=get_select('gender','female')?> value="female">Mujer</option>
 						</select>
  
 						<select class="my-2 form-control" name="rank">
 							<option <?=get_select('rank',$row->rank)?> value="<?=$row->rank?>"><?=ucwords($row->rank)?></option>
-							<option <?=get_select('rank','student')?> value="student">Student</option>
-							<option <?=get_select('rank','reception')?> value="reception">Reception</option>
-							<option <?=get_select('rank','lecturer')?> value="lecturer">Lecturer</option>
+							<option <?=get_select('rank','student')?> value="student">Estudiante</option>
+							<option <?=get_select('rank','reception')?> value="reception">Recepcion</option>
+							<option <?=get_select('rank','lecturer')?> value="lecturer">Profesor</option>
 							<option <?=get_select('rank','admin')?> value="admin">Admin</option>
 
 							<?php if(Auth::getRank() == 'super_admin'):?>
@@ -63,13 +63,13 @@
 
 						</select>
  
-						<input class="my-2 form-control" value="<?=get_var('password')?>" type="text" name="password" placeholder="Password">
-						<input class="my-2 form-control" value="<?=get_var('password2')?>" type="text" name="password2" placeholder="Retype Password">
+						<input class="my-2 form-control" value="<?=get_var('password')?>" type="text" name="password" placeholder="Contraseña">
+						<input class="my-2 form-control" value="<?=get_var('password2')?>" type="text" name="password2" placeholder="Confirmar contraseña">
 						<br>
-						<button class="btn btn-primary float-end">Save Changes</button>
+						<button class="btn btn-primary float-end">Guardar cambios</button>
 
 						<a href="<?=ROOT?>/profile/<?=$row->user_id?>">
-							<button type="button" class="btn btn-danger">Back to profile</button>
+							<button type="button" class="btn btn-danger">Regresar al perfil</button>
 						</a>
 						 
 					</div>
@@ -79,7 +79,7 @@
 		<br>
  		 
 		<?php else:?>
-			<center><h4>That profile was not found!</h4></center>
+			<center><h4>El perfil no ha sido encontrado</h4></center>
 		<?php endif;?>
 
 	</div>

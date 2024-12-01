@@ -3,24 +3,24 @@
 <?php $marked_percentage = get_mark_percentage($row->test_id,$user_id)?>
 
 <div class="container-fluid text-center">
-	<div class="text-danger"><?=$percentage?>% Answered</div>
+	<div class="text-danger"><?=$percentage?>% Respondido</div>
 	<div class="bg-primary" style="width: <?=$percentage?>%;height: 5px;"></div>
 
-	<div class="text-danger"><?=$marked_percentage?>% Marked</div>
+	<div class="text-danger"><?=$marked_percentage?>% Revisado</div>
 	<div class="bg-primary" style="width: <?=$marked_percentage?>%;height: 5px;"></div>
 	
 	<?php if($answered_test_row):?>
 		<?php if($answered_test_row->submitted && !$marked):?>
-			<div class="text-success">This test has been submitted</div>
+			<div class="text-success">Esta prueba ha sido enviada</div>
 			<a onclick="unsubmit_test(event)" href="<?=ROOT?>/mark_test/<?=$row->test_id?>/<?=$answered_test_row->user_id?>/?unsubmit=true">
-				<button class="btn mx-1 btn-danger float-end">unSubmit Test</button>
+				<button class="btn mx-1 btn-danger float-end">Cancelar envio</button>
 			</a>
 			<a onclick="set_test_as_marked(event)" href="<?=ROOT?>/mark_test/<?=$row->test_id?>/<?=$answered_test_row->user_id?>/?set_marked=true">
-				<button class="btn mx-1 btn-secondary float-end">Set Test as Marked</button>
+				<button class="btn mx-1 btn-secondary float-end">Fijar prueba como revisada</button>
 			</a>
 			
 			<a onclick="auto_mark(event)" href="<?=ROOT?>/mark_test/<?=$row->test_id?>/<?=$answered_test_row->user_id?>/?auto_mark=true">
-				<button class="btn mx-1 btn-warning float-end">Auto mark</button>
+				<button class="btn mx-1 btn-warning float-end">Auto revision</button>
 			</a>
 			
 
@@ -33,14 +33,14 @@
 <?php if($marked):?>
 <center>
 	<?php $score_percentage = get_score_percentage($row->test_id,$user_id)?>
-	<small style="font-size:20px">Test Score:<br></small> <div style="font-size: 60px;margin-top: -20px;"><?=$score_percentage?>%</div>
+	<small style="font-size:20px">Puntaje de prueba:<br></small> <div style="font-size: 60px;margin-top: -20px;"><?=$score_percentage?>%</div>
 </center>
 <?php endif;?>
 
 <nav class="navbar">
 	<center>
-		<h5>Test Questions</h5>
-		<p><b>Total Questions:</b> <?=$total_questions?></p>
+		<h5>Preguntas</h5>
+		<p><b>Total:</b> <?=$total_questions?></p>
 	</center>
  
 </nav>
@@ -61,7 +61,7 @@
  
 		<div class="card mb-4 ">
 		  <div class="card-header">
-		    <span  class="bg-primary p-1 text-white rounded">Question #<?=$num?></span> <span class="badge bg-primary float-end p-2"><?=date("F jS, Y H:i:s a",strtotime($question->date))?></span>
+		    <span  class="bg-primary p-1 text-white rounded">Pregunta #<?=$num?></span> <span class="badge bg-primary float-end p-2"><?=date("F jS, Y H:i:s a",strtotime($question->date))?></span>
 		  </div>
 		  <div class="card-body">
 		    <h5 class="card-title"><?=esc($question->question)?></h5>
@@ -87,7 +87,7 @@
 
 		    		<div class="card" style="width: 18rem;">
 						  <div class="card-header">
-						    Select your answer
+						    Selecciona tu respuesta
 						  </div>
 						  <ul class="list-group list-group-flush">
 
@@ -105,7 +105,7 @@
 						</div>
 
 						<hr>
-		  				Teacher's mark:
+		  				Revision del profesor:
 		  				
 	    				<div style="font-size: 45px;">
 	    					<?=($mymark == 1) ? '<i class="fa fa-check float-end"></i>':'<i class="fa fa-times float-end"></i>'?>
@@ -114,9 +114,9 @@
 		    	<?php endif;?>
 
 		    <?php if($question->question_type != 'multiple'):?>
-  				<div>Answer: <?=$myanswer?></div>
+  				<div>Respuesta: <?=$myanswer?></div>
   				<hr>
-  				Teacher's mark:
+  				Revision del profesor:
   				
 				<div style="font-size: 45px;">
 					<?=($mymark == 1) ? '<i class="fa fa-check float-end"></i>':'<i class="fa fa-times float-end"></i>'?>

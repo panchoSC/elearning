@@ -1,7 +1,7 @@
 <div class="card-group justify-content-center">
 
 	<table class="table table-striped table-hover">
-		<tr><th></th><th>Class Name</th><th>Created by</th><th>Date</th>
+		<tr><th></th><th>Nombre curso</th><th>Creado por</th><th>Fecha</th>
 			<th>
 				
 			</th>
@@ -34,7 +34,7 @@
 
  			<?php endforeach;?>
 			<?php else:?>
-				<tr><td colspan="5"><center>No classes were found at this time</center></td></tr>
+				<tr><td colspan="5"><center>No hay cursos encontrados en este momento</center></td></tr>
 			<?php endif;?>
 
 	</table>

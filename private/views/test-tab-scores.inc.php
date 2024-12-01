@@ -1,12 +1,12 @@
 <div class="table-responsive">
 
 	<a href="<?=ROOT?>/single_test/<?=$row->test_id?>">
-		<button class="btn btn-sm float-end btn-primary"><i class="fa fa-chevron-left"></i>Back</button>
+		<button class="btn btn-sm float-end btn-primary"><i class="fa fa-chevron-left"></i>Regresar</button>
 	</a>
 <table class="table table-striped table-hover caption-top">
 	
-	<caption>Student scores</caption>
-	<tr><th>Student Name</th><th>Score</th></tr>
+	<caption>Puntajes de estudiantes</caption>
+	<tr><th>Nombre estudiante</th><th>Puntaje</th></tr>
 	
 	<?php if($student_scores):?>
 		<?php foreach($student_scores as $score):?>

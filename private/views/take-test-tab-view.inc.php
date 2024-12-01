@@ -2,14 +2,14 @@
 <?php $percentage = get_answer_percentage($row->test_id,Auth::getUser_id())?>
 
 <div class="container-fluid text-center">
-	<div class="text-danger"><?=$percentage?>% Answered</div>
+	<div class="text-danger"><?=$percentage?>% Respondido</div>
 	<div class="bg-primary" style="width: <?=$percentage?>%;height: 5px;"></div>
 	<?php if($answered_test_row):?>
 		<?php if($answered_test_row->submitted):?>
-			<div class="text-success">This test has been submitted</div>
+			<div class="text-success">Esta prueba ha sido enviada</div>
 		<?php else:?>
 			<div class="text-danger">
-				This test has not yet been submitted<br>
+				Esta prueba aun no ha sido enviada<br>
 				<a onclick="submit_test(event)" href="<?=ROOT?>/take_test/<?=$row->test_id?>/?submit=true">
 					<button class="btn btn-danger float-end">Submit Test</button>
 				</a>
@@ -22,8 +22,8 @@
 
 <nav class="navbar">
 	<center>
-		<h5>Test Questions</h5>
-		<p><b>Total Questions:</b> <?=$total_questions?></p>
+		<h5>Preguntas</h5>
+		<p><b>Total:</b> <?=$total_questions?></p>
 	</center>
  
 </nav>
@@ -44,7 +44,7 @@
  
 		<div class="card mb-4 ">
 		  <div class="card-header">
-		    <span  class="bg-primary p-1 text-white rounded">Question #<?=$num?></span> <span class="badge bg-primary float-end p-2"><?=date("F jS, Y H:i:s a",strtotime($question->date))?></span>
+		    <span  class="bg-primary p-1 text-white rounded">Pregunta #<?=$num?></span> <span class="badge bg-primary float-end p-2"><?=date("F jS, Y H:i:s a",strtotime($question->date))?></span>
 		  </div>
 		  <div class="card-body">
 		    <h5 class="card-title"><?=esc($question->question)?></h5>
@@ -70,7 +70,7 @@
 
 		    		<div class="card" style="width: 18rem;">
 						  <div class="card-header">
-						    Select your answer
+						    Selecciona tu respuesta
 						  </div>
 						  <ul class="list-group list-group-flush">
 
@@ -97,9 +97,9 @@
 		    <?php if($question->question_type != 'multiple'):?>
 
 		    	<?php if(!$submitted):?>
-	  				<input type="text" value="<?=$myanswer?>" class="form-control" name="<?=$question->id?>" placeholder="Type your answer here">
+	  				<input type="text" value="<?=$myanswer?>" class="form-control" name="<?=$question->id?>" placeholder="Escribe tu respuesta">
   				<?php else:?>
-  					<div>Answer: <?=$myanswer?></div>
+  					<div>Respuesta: <?=$myanswer?></div>
   				<?php endif;?>
   			<?php endif;?>
 		  </div>
@@ -109,8 +109,8 @@
 
 	<?php if(!$submitted):?>
 		<center>
-			<small>Click save answers before moving to another page to save your answers</small><br>
-			<button class="btn btn-primary">Save Answers</button>
+			<small>Haga clic en guardar respuestas antes de pasar a otra página para guardar sus respuestas</small><br>
+			<button class="btn btn-primary">Guardar respuestas</button>
 		</center>
 		</form>
 	<?php endif;?>
@@ -125,13 +125,13 @@
 	function submit_test(e)
 	{
 
-		if(!confirm("Are you sure you want to submit this test!?")){
+		if(!confirm("¿Esta seguro de querer enviar la prueba?")){
 			e.preventDefault();
 			return;
 		}
 
 		if(percent < 100){
-			if(!confirm("You have only answered "+ percent +"% of the test. Are you still sure you want to submit?!")){
+			if(!confirm("Solamente ha respondido "+ percent +"% de la prueba. ¿Aun esta seguro de querer enviar?")){
 				e.preventDefault();
 				return;
 			}

@@ -4,7 +4,7 @@
 
 
 			 <form method="post">
-			 	<h3>Edit A Test</h3>
+			 	<h3>Editar prueba</h3>
 
 			 	<?php if(count($errors) > 0):?>
 				<div class="alert alert-warning alert-dismissible fade show p-1" role="alert">
@@ -18,8 +18,8 @@
 				</div>
 				<?php endif;?>
 			
-			 	<input autofocus class="form-control" value="<?=get_var('test',$test_row->test)?>" type="text" name="test" placeholder="Text Title"><br>
-			 	<textarea name="description" class="form-control" placeholder="Add a description for this test"><?=get_var('description',$test_row->description)?></textarea>
+			 	<input autofocus class="form-control" value="<?=get_var('test',$test_row->test)?>" type="text" name="test" placeholder="Titulo"><br>
+			 	<textarea name="description" class="form-control" placeholder="Agregar descripcion para la prueba"><?=get_var('description',$test_row->description)?></textarea>
 			 	
 			 	<?php  
 
@@ -28,21 +28,21 @@
 			 		$disabled_checked = $disabled ? "checked":"";
 			 	?>
 
-			 	<input type="radio" name="disabled" value="0"  <?=$active_checked?> > Active | 
-			 	<input type="radio" name="disabled" value="1"  <?=$disabled_checked?> > Disabled <br><br>
+			 	<input type="radio" name="disabled" value="0"  <?=$active_checked?> > Activo | 
+			 	<input type="radio" name="disabled" value="1"  <?=$disabled_checked?> > Deshabilitado <br><br>
 
-			 	<input class="btn btn-primary float-end" type="submit" value="Save">
+			 	<input class="btn btn-primary float-end" type="submit" value="Guardar">
 
 			 	<a href="<?=ROOT?>/single_class/<?=$row->class_id?>?tab=tests">
-			 		<input class="btn btn-danger" type="button" value="Back">
+			 		<input class="btn btn-danger" type="button" value="Regresar">
 			 	</a>
 			 </form>
 
 			<?php else:?>
-				Sorry, that test was not found!<br><br><br>
+				La prueba no ha sido encontrada<br><br><br>
 
 				<a href="<?=ROOT?>/single_class/<?=$row->class_id?>?tab=tests">
-			 		<input class="btn btn-danger" type="button" value="Back">
+			 		<input class="btn btn-danger" type="button" value="Regresar">
 			 	</a>
 			<?php endif;?>
 		</div>

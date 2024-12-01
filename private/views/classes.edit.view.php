@@ -9,7 +9,7 @@
  
 
 			 <form method="post">
-			 	<h3>Edit Class</h3>
+			 	<h3>Editar curso</h3>
 
 			 	<?php if(count($errors) > 0):?>
 				<div class="alert alert-warning alert-dismissible fade show p-1" role="alert">
@@ -23,11 +23,11 @@
 				</div>
 				<?php endif;?>
 			
-			 	<input autofocus class="form-control" value="<?=get_var('class',$row[0]->class)?>" type="text" name="class" placeholder="Class Name"><br><br>
-			 	<input class="btn btn-primary float-end" type="submit" value="Save">
+			 	<input autofocus class="form-control" value="<?=get_var('class',$row[0]->class)?>" type="text" name="class" placeholder="Nombre curso"><br><br>
+			 	<input class="btn btn-primary float-end" type="submit" value="Guardar">
 
 			 	<a href="<?=ROOT?>/classes">
-			 		<input class="btn btn-danger" type="button" value="Cancel">
+			 		<input class="btn btn-danger" type="button" value="Cancelar">
 			 	</a>
 			 </form>
 			

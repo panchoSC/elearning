@@ -56,8 +56,8 @@ class Classes extends Controller
  
  		}
 
-		$crumbs[] = ['Dashboard',''];
-		$crumbs[] = ['Classes','classes'];
+		$crumbs[] = ['Panel',''];
+		$crumbs[] = ['Cursos','classes'];
 
 		$this->view('classes',[
 			'crumbs'=>$crumbs,
@@ -92,9 +92,9 @@ class Classes extends Controller
  			}
  		}
 
- 		$crumbs[] = ['Dashboard',''];
-		$crumbs[] = ['Classes','classes'];
-		$crumbs[] = ['Add','classes/add'];
+ 		$crumbs[] = ['Panel',''];
+		$crumbs[] = ['Cursos','classes'];
+		$crumbs[] = ['Agregar','classes/add'];
 
 		$this->view('classes.add',[
 			'errors'=>$errors,
@@ -131,9 +131,9 @@ class Classes extends Controller
  		}
 
 
- 		$crumbs[] = ['Dashboard',''];
-		$crumbs[] = ['Classes','classes'];
-		$crumbs[] = ['Edit','classes/edit'];
+ 		$crumbs[] = ['Panel',''];
+		$crumbs[] = ['Cursos','classes'];
+		$crumbs[] = ['Editar','classes/edit'];
 
 		if(Auth::access('lecturer') && Auth::i_own_content($row)){
 
@@ -170,9 +170,9 @@ class Classes extends Controller
  		}
 
 
- 		$crumbs[] = ['Dashboard',''];
-		$crumbs[] = ['Classes','classes'];
-		$crumbs[] = ['Delete','classes/delete'];
+ 		$crumbs[] = ['Panel',''];
+		$crumbs[] = ['Cursos','classes'];
+		$crumbs[] = ['Borrar','classes/delete'];
 
 		if(Auth::access('lecturer') && Auth::i_own_content($row)){
 

@@ -4,16 +4,16 @@
 	      <div class="input-group-prepend">
 	        <span class="input-group-text" id="basic-addon1"><i class="fa fa-search"></i>&nbsp</span>
 	      </div>
-	      <input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon1">
+	      <input type="text" class="form-control" placeholder="Buscar" aria-label="Search" aria-describedby="basic-addon1">
 	    </div>
 	  </form>
 			<a href="<?=ROOT?>/single_class/testadd/<?=$row->class_id?>?tab=test-add">
-				<button class="btn btn-sm btn-primary"><i class="fa fa-plus"></i>Add Test</button>
+				<button class="btn btn-sm btn-primary"><i class="fa fa-plus"></i>Agregar prueba</button>
 			</a> 
 	</nav>
 
 		<table class="table table-striped table-hover">
-		<tr><th></th><th>Test Name</th><th>Created by</th><th>Active</th><th>Taken</th><th>Date</th>
+		<tr><th></th><th>Nombre prueba</th><th>Creado por</th><th>Activo</th><th>Tomado</th><th>Fecha</th>
 			<th>
 				
 			</th>
@@ -28,7 +28,7 @@
 			 			<button class="btn btn-sm btn-primary"><i class="fa fa-chevron-right"></i></button>
 			 		</a>
 			 	</td>
-			 	<?php $active = $row->disabled ? "No":"Yes";?>
+			 	<?php $active = $row->disabled ? "No":"Si";?>
 			 	<td><?=$row->test?></td>
 			 	<td><?=$row->user->firstname?> <?=$row->user->lastname?></td>
 			 	<td><?=$active?></td>
@@ -51,7 +51,7 @@
 
  			<?php endforeach;?>
 			<?php else:?>
-				<tr><td colspan="6"><center>No tests were found at this time</center></td></tr>
+				<tr><td colspan="6"><center>No hay pruebas encontradas en este momento</center></td></tr>
 			<?php endif;?>
 
 	</table>

@@ -18,8 +18,8 @@ class Single_class extends Controller
 		$classes = new Classes_model();
 		$row = $classes->first('class_id',$id);
 
-		$crumbs[] = ['Dashboard',''];
-		$crumbs[] = ['classes','classes'];
+		$crumbs[] = ['Panel',''];
+		$crumbs[] = ['Cursos','classes'];
 
 		if($row){
 			$crumbs[] = [$row->class,''];
@@ -81,8 +81,8 @@ class Single_class extends Controller
 		$classes = new Classes_model();
 		$row = $classes->first('class_id',$id);
 
-		$crumbs[] = ['Dashboard',''];
-		$crumbs[] = ['classes','classes'];
+		$crumbs[] = ['Panel',''];
+		$crumbs[] = ['Cursos','classes'];
 
 		if($row){
 			$crumbs[] = [$row->class,''];
@@ -181,8 +181,8 @@ class Single_class extends Controller
 		$row = $classes->first('class_id',$id);
 
 
-		$crumbs[] = ['Dashboard',''];
-		$crumbs[] = ['classes','classes'];
+		$crumbs[] = ['Panel',''];
+		$crumbs[] = ['Cursos','classes'];
 
 		if($row){
 			$crumbs[] = [$row->class,''];
@@ -257,8 +257,8 @@ class Single_class extends Controller
 		$classes = new Classes_model();
 		$row = $classes->first('class_id',$id);
 
-		$crumbs[] = ['Dashboard',''];
-		$crumbs[] = ['classes','classes'];
+		$crumbs[] = ['Panel',''];
+		$crumbs[] = ['Cursos','classes'];
 
 		if($row){
 			$crumbs[] = [$row->class,''];
@@ -356,8 +356,8 @@ class Single_class extends Controller
 		$row = $classes->first('class_id',$id);
 
 
-		$crumbs[] = ['Dashboard',''];
-		$crumbs[] = ['classes','classes'];
+		$crumbs[] = ['Panel',''];
+		$crumbs[] = ['Cursos','classes'];
 
 		if($row){
 			$crumbs[] = [$row->class,''];
@@ -432,8 +432,8 @@ class Single_class extends Controller
 		$classes = new Classes_model();
 		$row = $classes->first('class_id',$id);
 
-		$crumbs[] = ['Dashboard',''];
-		$crumbs[] = ['classes','classes'];
+		$crumbs[] = ['Panel',''];
+		$crumbs[] = ['Cursos','classes'];
 
 		if($row){
 			$crumbs[] = [$row->class,''];
@@ -489,8 +489,8 @@ class Single_class extends Controller
 		$row = $classes->first('class_id',$id);
 		$test_row = $tests->first('test_id',$test_id);
 
-		$crumbs[] = ['Dashboard',''];
-		$crumbs[] = ['classes','classes'];
+		$crumbs[] = ['Panel',''];
+		$crumbs[] = ['Cursos','classes'];
 
 		if($row){
 			$crumbs[] = [$row->class,''];
@@ -544,8 +544,8 @@ class Single_class extends Controller
 		$row = $classes->first('class_id',$id);
 		$test_row = $tests->first('test_id',$test_id);
 
-		$crumbs[] = ['Dashboard',''];
-		$crumbs[] = ['classes','classes'];
+		$crumbs[] = ['Panel',''];
+		$crumbs[] = ['Cursos','classes'];
 
 		if($row){
 			$crumbs[] = [$row->class,''];

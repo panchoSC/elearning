@@ -25,8 +25,8 @@ class Mark_test extends Controller
 			'test_id' => $id,
 		]);
 
-		$crumbs[] = ['Dashboard',''];
-		$crumbs[] = ['tests','tests'];
+		$crumbs[] = ['Panel',''];
+		$crumbs[] = ['Pruebas','tests'];
 
 		if($row){
 			$crumbs[] = [$row->test,''];

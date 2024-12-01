@@ -27,11 +27,18 @@
 
 	 			<?php endforeach;?>
  			<?php else:?>
- 				<h4>No students were found at this time</h4>
+ 				<h4>No hay estudiantes encontrados en este momento</h4>
  			<?php endif;?>
 		</div>
 
 		<?php $pager->display()?>
 	</div>
+	<!--Start of Dailyco Script -->
+	<script crossorigin src="https://unpkg.com/@daily-co/daily-js"></script>
+	<script>
+	window.call = window.Daily.createFrame();
+	call.join({ url: 'https://pancho.daily.co/probando' });
+	</script>
+	<!--End of Dailyco Script -->
  
 <?php $this->view('includes/footer')?>

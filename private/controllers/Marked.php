@@ -90,8 +90,8 @@ class Marked extends Controller
 			
 		}
 			
-		$crumbs[] = ['Dashboard',''];
-		$crumbs[] = ['To Mark','to_mark'];
+		$crumbs[] = ['Panel',''];
+		$crumbs[] = ['Revisar','to_mark'];
 
 		$this->view('marked',[
 			'crumbs'=>$crumbs,

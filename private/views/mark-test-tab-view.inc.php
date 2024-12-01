@@ -3,10 +3,10 @@
 <?php $marked_percentage = get_mark_percentage($row->test_id,$user_id)?>
 
 <div class="container-fluid text-center">
-	<div class="text-danger"><?=$percentage?>% Answered</div>
+	<div class="text-danger"><?=$percentage?>% Respondido</div>
 	<div class="bg-primary" style="width: <?=$percentage?>%;height: 5px;"></div>
 
-	<div class="text-danger"><?=$marked_percentage?>% Marked</div>
+	<div class="text-danger"><?=$marked_percentage?>% Revisado</div>
 	<div class="bg-primary" style="width: <?=$marked_percentage?>%;height: 5px;"></div>
 	
 	<?php if($answered_test_row):?>
@@ -39,8 +39,8 @@
 
 <nav class="navbar">
 	<center>
-		<h5>Test Questions</h5>
-		<p><b>Total Questions:</b> <?=$total_questions?></p>
+		<h5>Preguntas</h5>
+		<p><b>Total:</b> <?=$total_questions?></p>
 	</center>
  
 </nav>
@@ -62,7 +62,7 @@
  
 		<div class="card mb-4 ">
 		  <div class="card-header">
-		    <span  class="bg-primary p-1 text-white rounded">Question #<?=$num?></span> <span class="badge bg-primary float-end p-2"><?=date("F jS, Y H:i:s a",strtotime($question->date))?></span>
+		    <span  class="bg-primary p-1 text-white rounded">Pregunta #<?=$num?></span> <span class="badge bg-primary float-end p-2"><?=date("F jS, Y H:i:s a",strtotime($question->date))?></span>
 		  </div>
 		  <div class="card-body">
 		    <h5 class="card-title"><?=esc($question->question)?></h5>
@@ -88,7 +88,7 @@
 
 		    		<div class="card" style="width: 18rem;">
 						  <div class="card-header">
-						    Select your answer
+						    Selecciona tu respuesta
 						  </div>
 						  <ul class="list-group list-group-flush">
 
@@ -106,18 +106,18 @@
 						</div>
 
 						<hr>
-		  				Teacher's mark:
+		  				Revision del profesor:
 		  				<?php if(!$marked):?>
 			  				<div class="form-check">
 							  <input <?=($mymark == 1) ? ' checked ':''?>  class="form-check-input" type="radio" name="<?=$question->id?>" value="1" id="flexRadioDefaultcorrect<?=$num?>">
 							  <label class="form-check-label" for="flexRadioDefaultcorrect<?=$num?>">
-							    Correct
+							    Correcta
 							  </label>
 							</div>
 							<div class="form-check">
 							  <input <?=($mymark == 2) ? ' checked ':''?>  class="form-check-input" type="radio" name="<?=$question->id?>" value="2" id="flexRadioDefaultwrong<?=$num?>">
 							  <label class="form-check-label" for="flexRadioDefaultwrong<?=$num?>">
-							    Wrong
+							    Incorrecta
 							  </label>
 							</div>
 		    			<?php else:?>
@@ -129,20 +129,20 @@
 		    	<?php endif;?>
 
 		    <?php if($question->question_type != 'multiple'):?>
-  				<div>Answer: <?=$myanswer?></div>
+  				<div>Respuesta: <?=$myanswer?></div>
   				<hr>
-  				Teacher's mark:
+  				Revision del profesor:
   				<?php if(!$marked):?>
 	  				<div class="form-check">
 					  <input <?=($mymark == 1) ? ' checked ':''?> class="form-check-input" type="radio" name="<?=$question->id?>" value="1" id="flexRadioDefaultcorrect<?=$num?>">
 					  <label class="form-check-label" for="flexRadioDefaultcorrect<?=$num?>">
-					    Correct
+					    Correcta
 					  </label>
 					</div>
 					<div class="form-check">
 					  <input <?=($mymark == 2) ? ' checked ':''?> class="form-check-input" type="radio" name="<?=$question->id?>" value="2" id="flexRadioDefaultwrong<?=$num?>">
 					  <label class="form-check-label" for="flexRadioDefaultwrong<?=$num?>">
-					    Wrong
+					    Incorrecta
 					  </label>
 					</div>
 				<?php else:?>
@@ -159,8 +159,8 @@
 
 	<?php if(!$marked):?>
 		<center>
-			<small>Click save marks before moving to another page to save</small><br>
-			<button class="btn btn-primary">Save Marks</button>
+			<small>Haga clic en guardar revisiones antes de pasar a otra página para guardar</small><br>
+			<button class="btn btn-primary">Guardar revisiones</button>
 		</center>
 		</form>
 	<?php endif;?>
@@ -173,7 +173,7 @@
 	function unsubmit_test(e)
 	{
 
-		if(!confirm("Are you sure you want to remove this test from the submission list!?")){
+		if(!confirm("¿Esta seguro de que desea eliminar esta prueba de la lista de envios?")){
 			e.preventDefault();
 			return;
 		}
@@ -183,7 +183,7 @@
 
 	function auto_mark(e)
 	{
-		if(!confirm("This action may override any custom marks you have saved. Are you sure you want to auto mark this test?!")){
+		if(!confirm("Esta acción puede anular cualquier revision personalizada que haya guardado. ¿Estas seguro de que quieres revisar automáticamente esta prueba?")){
 			e.preventDefault();
 			return;
 		}
@@ -195,10 +195,10 @@
 
 		if(percent < 100){
 			e.preventDefault();
-			alert("You have only marked "+percent+"% of the questions. You can only set a test as marked after marking all questions");
+			alert("Solamente has revisado "+percent+"% de las preguntas. Solo puedes configurar una prueba como revisada despues de revisar todas las preguntas.");
 			return;
 		}
-		if(!confirm("You wont be able to mark questions after this action. continue?!")){
+		if(!confirm("No podrás revisar preguntas después de esta acción. ¿Quieres continuar?")){
 			e.preventDefault();
 			return;
 		}

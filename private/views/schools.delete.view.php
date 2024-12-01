@@ -24,11 +24,11 @@
 		<?php else: ?>
 
 			<div style="text-align: center;">
-				<h3>That school was not found!</h3>
+				<h3>La escuela no ha sido encontrada</h3>
 				<div class="clearfix"></div>
 				<br><br>
 				<a href="<?=ROOT?>/schools">
-			 		<input class="btn btn-danger" type="button" value="Cancel">
+			 		<input class="btn btn-danger" type="button" value="Cancelar">
 			 	</a>
 		 	</div>
 		<?php endif; ?>

@@ -10,13 +10,13 @@
 	 	<center><h4><?=esc(ucwords($row->test))?></h4></center>
 	 	<center class="row">
 
-	 		<h5 class="col">Class:
+	 		<h5 class="col">Curso:
 	 			<a href="<?=ROOT?>/single_class/<?=$row->class->class_id?>?tab=students">
 	 				<?=$row->class->class?>
 	 			</a> 
 	 		</h5>
 	 		
-	 		<h5 class="col">Student:
+	 		<h5 class="col">Estudiante:
 	 			<a href="<?=ROOT?>/profile/<?=$student_row->user_id?>?tab=tests">
 	 				<?=$student_row->firstname?> <?=$student_row->lastname?>
 	 			</a> 
@@ -25,23 +25,23 @@
 
 			<table class="table table-hover table-striped table-bordered">
 				<tr>
-					<th>Created by:</th>
+					<th>Creado por:</th>
 					<td>
 						<a href="<?=ROOT?>/profile/<?=$row->user->user_id?>?tab=tests">
 							<?=esc($row->user->firstname)?> <?=esc($row->user->lastname)?>
 						</a>
 					</td>
-					<th>Date Created:</th><td><?=get_date($row->date)?></td>
+					<th>Fecha de creacion:</th><td><?=get_date($row->date)?></td>
 				 
 				</tr>
 
-				<?php $active = $row->disabled ? "No":"Yes";?>
+				<?php $active = $row->disabled ? "No":"Si";?>
 				<tr>
-					<td><b>Class:</b> <?=$row->class->class?></td>
-					<td colspan="5"><b>Test Description:</b><br><?=esc($row->description)?></td></tr>
+					<td><b>Curso:</b> <?=$row->class->class?></td>
+					<td colspan="5"><b>Descripcion prueba:</b><br><?=esc($row->description)?></td></tr>
 			</table>
 			<a href="<?=ROOT?>/make_pdf/<?=$row->test_id?>/<?=$student_row->user_id?>?type=test">
-			<button class="btn btn-primary float-end">Save as PDF</button>
+			<button class="btn btn-primary float-end">Guardar PDF</button>
 			</a>
  		</div>
  		 
@@ -64,7 +64,7 @@
 		 		?>
 		 
 		<?php else:?>
-			<center><h4>That test was not found!</h4></center>
+			<center><h4>La prueba no ha sido encontrada</h4></center>
 		<?php endif;?>
 
 	</div>

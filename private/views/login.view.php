@@ -25,8 +25,8 @@
 			<input class="form-control" value="<?=get_var('password')?>" type="password" name="password" placeholder="Contraseña">
 			<br>
 			<button class="btn btn-primary">Entrar</button>
+			
 		</div>
 	</form>
-	</div>
 
 <?php $this->view('includes/footer')?>

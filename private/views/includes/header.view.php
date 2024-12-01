@@ -9,6 +9,7 @@
 
 	<link rel="stylesheet" type="text/css" href="<?=ROOT?>/assets/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="<?=ROOT?>/assets/all.min.css">
+	
 </head>
 <body>
 	<style>
